@@ -27,11 +27,16 @@ This tool is useful for quickly inspecting GitHub profiles without opening a bro
 
 ## Setup
 1. Clone the repository
-<pre>bash git clone https://github.com/Arman-Ali-Dafadar/github-api.git
+<pre>git clone https://github.com/Arman-Ali-Dafadar/github-api.git
 cd github-api</pre>
 
-2. Install Dependencies
-<pre>bash pip install -r requirements.txt</pre>
+2. Create a virtual environment(optional but highly recommended)
+<pre>python -m venv .venv
+source .venv/bin/activate  # Linux / macOS
+.venv\Scripts\activate     # Windows
+</pre>
+3. Install Dependencies
+<pre>pip install -r requirements.txt</pre>
 
 
 ## GitHub API Token Setup
@@ -41,3 +46,37 @@ cd github-api</pre>
 4. No special scopes are required for public data
 5. Create a .env file in the repository root directory
 6. Copy the token to the .env file as `github_token=paste your personal access token here`
+
+## Usage
+Simply run the python file using:
+<pre>python3 app.py</pre>
+And enter the desired GitHib username when prompted.
+
+Sample Example:
+<pre>
+Enter the gitHub username:torvalds
+User related data:
+    Name:Linus Torvalds
+    Usename:torvalds
+    Email:None
+    Location:Portland, OR
+    Company:Linux Foundation
+    Hireable:None
+    Bio:None
+    Created at:2011-09-03T15:26:22Z
+Public Repositories of usename:torvalds
+Repo Name:linux
+    Description:None
+    Folks:False
+    Size:5899100
+    Language:C
+    Fork Count:59703
+    Created at:2011-09-04T22:48:12Z
+    Updated at:2026-01-02T20:00:50Z
+</pre>
+> The shown output is just for an example.
+
+## Limitations
+- Only public GitHub data is accessible
+- Private repositories and emails are not visible
+- Rate limits depend on GitHub API policies
